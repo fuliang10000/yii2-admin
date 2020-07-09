@@ -51,7 +51,11 @@ return [
         ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // 使用数据库管理配置文件
-        ]
+        ],
+        'assetManager' => [
+            'appendTimestamp' => true,//实测对性能有影响
+            'linkAssets' => true // 刷新后就可以清除缓存
+        ],
     ],
     'as access' => [
         'class' => 'backend\modules\rbac\components\AccessControl',
